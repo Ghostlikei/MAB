@@ -67,7 +67,7 @@ def test_different_init(repeat = 100):
         h, a, d = generate_linear_attributes(linear_coef=10.0, health=100)
         player1 = Player(h, a, d, "P1")
 
-        h, a, d = generate_linear_attributes(linear_coef=10.0, health=110, interval_coef=0.05)
+        h, a, d = generate_linear_attributes(linear_coef=10.0, health=105, interval_coef=0.05)
         monster1 = Monster(h, a, d, "M1")
 
         print("################INIT#################")

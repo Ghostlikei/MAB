@@ -122,8 +122,8 @@ class PvE:
             plt.plot(range(n_rounds_per_player), cumulative_regret_results_mean[algo], label=f'{algo.capitalize()}')
             # Plot mean with shaded area for std deviation
             plt.fill_between(range(n_rounds_per_player), 
-                            cumulative_regret_results_mean[algo] - cumulative_regret_results_std[algo], 
-                            cumulative_regret_results_mean[algo] + cumulative_regret_results_std[algo], 
+                            cumulative_regret_results_mean[algo] - 0.2 * cumulative_regret_results_std[algo], 
+                            cumulative_regret_results_mean[algo] + 0.2 * cumulative_regret_results_std[algo], 
                             alpha=0.2)
 
         # Labels and title
@@ -151,5 +151,5 @@ class PvE:
 
 
 if __name__ == "__main__":
-    pve_env = PvE(player_num=20)
+    pve_env = PvE(player_num=20, player_health_lower = 100, player_health_upper = 200, monster_health_lower=100, monster_health_upper=200)
     pve_env.run_all_algorithms(n_rounds_per_player=10000)
